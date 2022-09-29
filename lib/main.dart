@@ -40,9 +40,8 @@ class MyApp extends StatelessWidget {
 
       debugShowCheckedModeBanner: false,
 
+      initialRoute: MyRoutes.homeRoute,
       routes: {
-        //initialRoute: "/home",
-
         "/": (context) => const Login(),
         MyRoutes.homeRoute: (context) => const Homepage(),
         MyRoutes.loginRoute: (context) => const Login()
