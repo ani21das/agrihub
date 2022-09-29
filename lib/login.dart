@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, duplicate_ignore
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/routes.dart';
 
 class Login extends StatelessWidget {
   const Login({Key? key}) : super(key: key);
@@ -63,12 +64,14 @@ class Login extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 20.0,
+                  height: 35.0,
                 ),
                 ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, MyRoutes.homeRoute);
+                    },
                     child: Text("Login"),
-                    style: TextButton.styleFrom()),
+                    style: TextButton.styleFrom(minimumSize: Size(1300, 35))),
               ],
             ),
           ),
