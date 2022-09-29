@@ -1,12 +1,21 @@
-// ignore_for_file: prefer_const_constructors, duplicate_ignore
+// ignore_for_file: prefer_const_constructors, duplicate_ignore, unused_import
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/routes.dart';
 
-class Login extends StatelessWidget {
+class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
 
+  @override
+  State<Login> createState() => _LoginState();
+}
+
+// _ meaning in dart is to be private anything
+class _LoginState extends State<Login> {
   //const ({ Key? key }) : super(key: key);
+
+  String name = "";
+  bool changeButton = false;
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +48,7 @@ class Login extends StatelessWidget {
               height: 20.0,
             ),
             Text(
-              "Welcome",
+              "Welcome $name",
               style: TextStyle(
                 fontSize: 25,
                 fontWeight: FontWeight.bold,
@@ -56,26 +65,75 @@ class Login extends StatelessWidget {
                   ),
                   TextFormField(
                     decoration: InputDecoration(
-                      hintText: "Enter 10 digit mobile number",
-                      labelText: "Mobile number",
+                      hintText: "Enter Your Name",
+                      labelText: "Name",
                     ),
+                    onChanged: (value) {
+                      name = value;
+                      setState(() {
+                        // called the built method & don't call build mathody by build(context) otherwise ....
+                      });
+                    },
                   ),
                   TextFormField(
                     obscureText: true, // by default false
                     decoration: InputDecoration(
-                      hintText: "Enter 4 digit OTP",
-                      labelText: "OTP",
+                      hintText: "Enter 10 digit mobile number",
+                      labelText: "Mobile number",
                     ),
                   ),
                   SizedBox(
                     height: 35.0,
                   ),
-                  ElevatedButton(
-                      onPressed: () {
-                        Navigator.pushNamed(context, MyRoutes.homeRoute);
-                      },
-                      child: Text("Login"),
-                      style: TextButton.styleFrom(minimumSize: Size(1300, 35))),
+
+                  // simple button
+                  // ElevatedButton(
+                  //     onPressed: () {
+                  //       Navigator.pushNamed(context, MyRoutes.homeRoute);
+                  //     },
+                  //     child: Text("Login"),
+                  //     style: TextButton.styleFrom(minimumSize: Size(1300, 35))),
+
+                  // Animated button
+                  InkWell(
+                    onTap: () async {
+                      setState(() {
+                        changeButton = true;
+                      });
+                      await Future.delayed(Duration(seconds: 1));
+                      Navigator.pushNamed(context, MyRoutes.homeRoute);
+                    },
+                    child: AnimatedContainer(
+                      duration: Duration(seconds: 1),
+                      width: changeButton ? 50 : 140,
+                      height: 50,
+                      //color: Colors.deepPurple, // By default white
+                      alignment: Alignment.center,
+                      child: changeButton
+                          ? Icon(
+                              Icons.done,
+                              color: Colors.white,
+                            )
+                          : Text(
+                              "Login",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18),
+                            ),
+                      decoration: BoxDecoration(
+                        //Dont use color on both here and container
+
+                        borderRadius:
+                            BorderRadius.circular(changeButton ? 50 : 8),
+
+                        //else we can use it
+                        //shape:changeButton ? BoxShape.circle : BoxShape.rectangle,
+
+                        color: Colors.deepPurple,
+                      ),
+                    ),
+                  )
                 ],
               ),
             ),
