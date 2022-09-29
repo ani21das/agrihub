@@ -23,59 +23,64 @@ class Login extends StatelessWidget {
       // ),
 
       color: Colors.white,
-      child: Column(
-        // ignore: duplicate_ignore
-        children: [
-          Image.asset(
-            "assets/images/undraw_enter_uhqk.png",
-            fit: BoxFit.cover,
-          ),
-          // ignore: prefer_const_constructors
-          SizedBox(
-            height: 20.0,
-          ),
-          Text(
-            "Welcome",
-            style: TextStyle(
-              fontSize: 25,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
+      child: SingleChildScrollView(
+        child: Column(
+          // ignore: duplicate_ignore
+          children: [
+            Image.asset(
+              "assets/images/undraw_enter_uhqk.png",
+              fit: BoxFit.cover,
 
-          Padding(
-            padding:
-                const EdgeInsets.symmetric(vertical: 16.0, horizontal: 32.0),
-            child: Column(
-              children: [
-                SizedBox(
-                  height: 20.0,
-                ),
-                TextFormField(
-                  decoration: InputDecoration(
-                    hintText: "Enter 10 digit mobile number",
-                    labelText: "Mobile number",
-                  ),
-                ),
-                TextFormField(
-                  obscureText: true, // by default false
-                  decoration: InputDecoration(
-                    hintText: "Enter 4 digit OTP",
-                    labelText: "OTP",
-                  ),
-                ),
-                SizedBox(
-                  height: 35.0,
-                ),
-                ElevatedButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, MyRoutes.homeRoute);
-                    },
-                    child: Text("Login"),
-                    style: TextButton.styleFrom(minimumSize: Size(1300, 35))),
-              ],
+              // just for checking scroll view using the warpper widget SingleChildscrollview
+              //height: 800,
             ),
-          ),
-        ],
+            // ignore: prefer_const_constructors
+            SizedBox(
+              height: 20.0,
+            ),
+            Text(
+              "Welcome",
+              style: TextStyle(
+                fontSize: 25,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            Padding(
+              padding:
+                  const EdgeInsets.symmetric(vertical: 16.0, horizontal: 32.0),
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 20.0,
+                  ),
+                  TextFormField(
+                    decoration: InputDecoration(
+                      hintText: "Enter 10 digit mobile number",
+                      labelText: "Mobile number",
+                    ),
+                  ),
+                  TextFormField(
+                    obscureText: true, // by default false
+                    decoration: InputDecoration(
+                      hintText: "Enter 4 digit OTP",
+                      labelText: "OTP",
+                    ),
+                  ),
+                  SizedBox(
+                    height: 35.0,
+                  ),
+                  ElevatedButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, MyRoutes.homeRoute);
+                      },
+                      child: Text("Login"),
+                      style: TextButton.styleFrom(minimumSize: Size(1300, 35))),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
