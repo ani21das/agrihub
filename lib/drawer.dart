@@ -10,7 +10,7 @@ class MyDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: Container(
-        color: Colors.purple,
+        color: Colors.white,
         child: ListView(
           children: [
             // ignore: prefer_const_constructors
@@ -39,15 +39,12 @@ class MyDrawer extends StatelessWidget {
                   ),
                 )),
             ListTile(
-              leading: Icon(
-                CupertinoIcons.home,
-                color: Colors.white,
-              ),
+              leading: Icon(CupertinoIcons.home, color: Colors.black),
               title: Text(
                 "Home",
                 textScaleFactor: 1.2,
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                 ),
               ),
             ),
@@ -55,13 +52,13 @@ class MyDrawer extends StatelessWidget {
             ListTile(
               leading: Icon(
                 CupertinoIcons.profile_circled,
-                color: Colors.white,
+                color: Colors.black,
               ),
               title: Text(
                 "Profile",
                 textScaleFactor: 1.2,
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                 ),
               ),
             ),
@@ -69,65 +66,65 @@ class MyDrawer extends StatelessWidget {
             ListTile(
               leading: Icon(
                 CupertinoIcons.calendar_today,
-                color: Colors.white,
+                color: Colors.black,
               ),
               title: Text(
                 "Daily Tips",
                 textScaleFactor: 1.2,
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                 ),
               ),
             ),
             ListTile(
               leading: Icon(
                 CupertinoIcons.plus_rectangle,
-                color: Colors.white,
+                color: Colors.black,
               ),
               title: Text(
                 "Crop Health",
                 textScaleFactor: 1.2,
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                 ),
               ),
             ),
             ListTile(
               leading: Icon(
                 CupertinoIcons.camera,
-                color: Colors.white,
+                color: Colors.black,
               ),
               title: Text(
                 "Disease Detection",
                 textScaleFactor: 1.2,
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                 ),
               ),
             ),
             ListTile(
               leading: Icon(
                 CupertinoIcons.tornado,
-                color: Colors.white,
+                color: Colors.black,
               ),
               title: Text(
                 "Weather Update",
                 textScaleFactor: 1.2,
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                 ),
               ),
             ),
             ListTile(
               leading: Icon(
                 CupertinoIcons.mail,
-                color: Colors.white,
+                color: Colors.black,
               ),
               title: Text(
                 "Contact us",
                 textScaleFactor: 1.2,
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                 ),
               ),
             )

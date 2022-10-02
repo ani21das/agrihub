@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
 
       themeMode: ThemeMode.light,
       theme: ThemeData(
-        primarySwatch: Colors.purple,
+        primarySwatch: Colors.blueGrey,
         //fontFamily: GoogleFonts.lato().fontFamily,
         //primaryTextTheme: GoogleFonts.latoTextTheme()), only on primary text theme
       ),

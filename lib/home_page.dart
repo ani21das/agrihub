@@ -11,11 +11,21 @@ class Homepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Farm Easy"),
+        backgroundColor: Colors.white,
+        elevation: 0.0,
+        // ignore: prefer_const_constructors
+        iconTheme: IconThemeData(color: Colors.black),
+        title: const Text(
+          "Farm Easy",
+          style: TextStyle(
+            color: Colors.black,
+          ),
+        ),
       ),
       // body: Center(
       //   child: Text("Welcome to day $day of learning flutter by $named"),
       // ),
+
       drawer: const MyDrawer(),
     );
   }
