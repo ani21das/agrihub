@@ -17,16 +17,11 @@ class Homepage extends StatelessWidget {
         iconTheme: IconThemeData(color: Colors.black),
         title: const Text(
           "Farm Easy",
-          style: TextStyle(
-            color: Colors.black,
-          ),
         ),
       ),
-      // body: Center(
-      //   child: Text("Welcome to day $day of learning flutter by $named"),
-      // ),
 
-      drawer: const MyDrawer(),
+      // ignore: prefer_const_constructors
+      drawer: MyDrawer(),
     );
   }
 }

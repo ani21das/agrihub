@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/home_page.dart';
 import 'package:flutter_application_1/routes.dart';
+import 'package:flutter_application_1/themes.dart';
 //import 'package:google_fonts/google_fonts.dart';
 import 'login.dart';
 
@@ -30,15 +31,14 @@ class MyApp extends StatelessWidget {
       // ),
 
       themeMode: ThemeMode.light,
-      theme: ThemeData(
-        primarySwatch: Colors.blueGrey,
-        //fontFamily: GoogleFonts.lato().fontFamily,
-        //primaryTextTheme: GoogleFonts.latoTextTheme()), only on primary text theme
-      ),
+      theme: Mytheme.lightTheme(context),
+      darkTheme: Mytheme.darkTheme(context),
 
       // for debug icon on phone
 
       debugShowCheckedModeBanner: false,
+
+      //routes
 
       initialRoute: MyRoutes.homeRoute,
       routes: {
